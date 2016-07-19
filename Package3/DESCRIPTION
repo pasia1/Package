@@ -1,0 +1,14 @@
+Package: Package3
+Title: Package with ARID1A mutations data from TumorPortal
+Version: 0.1.0
+Authors@R: person("Joanna", "Przybyl", email = "jprzybyl@stanford.edu", role = c("aut", "cre"))
+Description: This package contains info about ARID1A mutations in TumorPortal and contains a function called pplot to plot the number of ARID1A mutations per tumor type.
+Depends:
+    R (>= 3.3.1)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

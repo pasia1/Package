@@ -1,0 +1,19 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+This is a markdown in Package3 package.
+It plot the number of ARID1A mutations per tumor type according to TumorPortal data.
+
+Just use the pplot function within this package indicating ARID1A dataset as the function input.
+plot(ARID1A)

@@ -1,0 +1,151 @@
+---
+title: "How_to_write_a_package"
+author: "Joanna Przybyl"
+date: "July 18, 2016"
+output: html_document
+---
+
+```{r}
+# First load the following packages
+library(devtools)
+library(roxygen2)
+library(knitr)
+library(rmarkdown)
+```
+
+
+
+```{r}
+#Set the working drectory to the appropriate folder
+setwd("~/Desktop/SISBID_Module3/package3")
+
+#Create a package in this directory
+devtools::create("Package3")
+
+#This creates a new folder (toyPackage) populated with some of the files every package needs.
+
+#What is there?
+#.gitignore
+#.Rbuildignore
+#DESCRIPTION
+#NAMESPACE
+#R/ (initially empty)
+#Package3.Rproj
+
+# First edit the DESCRIPTION file
+# Change the title, version, description, the author, license infor etc.
+# License options:
+# 1. CC0 (Creative Commons) is extremely broad; other
+# commonly used ones are
+# 2. MIT and
+# 3. GPL (please see cheatsheet).
+
+# Now document all of the changes in the package
+# updates NAMESPACE, creates man/,
+# edits DESCRIPTION
+
+document()
+build()
+install()
+check()
+.rs.restartR()
+library(Package3)
+```
+
+# Next step
+# add is more text documenting what we want the package to do.
+# Create a new R script, wrote some description and save it ro the R forlder
+# include a name and a doc type in this R script starting with @
+# After you do this, document all of the changes again
+
+
+
+```{r}
+document()
+build()
+install()
+check()
+.rs.restartR()
+```
+
+# Invoking document() now generated an R documentation (.Rd) file in man/
+
+# ?Package3 will now check the documentation for the package
+
+```{r}
+library(Package3)
+?Package3
+```
+
+# Some stuff to be included in the package:
+# README.md
+# vignettes
+# data
+
+# Use these commands:
+
+```{r}
+use_readme_rmd() # creates a markdown
+use_vignette("Package3_vignette") # this will create a vignette for the package (you need to add a name)
+```
+
+# Go through the document - build - install - check cycle again to save all of the changes
+
+```{r}
+document()
+build()
+install()
+check()
+.rs.restartR()
+```
+
+```{r}
+library(Package3)
+```
+
+# Now we can add a trivial function to this package
+# Create new R script, insert the function and save it to the R folder
+
+#After creating a function called trivial, go through this loop again:
+
+```{r}
+document()
+build()
+install()
+check()
+.rs.restartR()
+```
+
+```{r}
+library(Package3)
+?trivial2
+```
+
+# Add some data to the package
+```{r}
+ARID1A <- read.csv("ARID1A.csv")
+use_data(ARID1A) #saves the data to the package
+```
+
+#After adding ARID1A data, go through this loop again:
+
+```{r}
+document()
+build()
+install()
+check()
+.rs.restartR()
+```
+
+```{r}
+library(Package3)
+```
+
+# Now add a new function to generate a plot from ARID1A data
+# In a new R script file
+
+
+# Adding a dependent package to be loaded together with my package
+```{r}
+use_package(package, type=Imports, pkg=".")
+```
