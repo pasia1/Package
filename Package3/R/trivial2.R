@@ -2,12 +2,12 @@
 #'
 #'This will dd two numbers, x and y
 #'
-#'@param x,y two numbers to be multiplied
+#'@param x,y two numbers to be added
 #'@return the multiplication of two numbers
 #'@examples
 #'trivial2(3,2)
 #'@export
-trivial2 <- function(x,y){x*y}
+trivial2 <- function(x,y){x+y}
 
 #'
 #'
