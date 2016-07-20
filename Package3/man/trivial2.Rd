@@ -7,7 +7,7 @@
 trivial2(x, y)
 }
 \arguments{
-\item{x, y}{two numbers to be multiplied}
+\item{x, y}{two numbers to be added}
 }
 \value{
 the multiplication of two numbers

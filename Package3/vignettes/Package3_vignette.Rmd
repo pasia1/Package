@@ -20,15 +20,32 @@ knitr::opts_chunk$set(
   cache = FALSE
 )
 ```
-#This is a vignette for Package3 that creates a plot of ARID1A mutation per tumor type.
+# Executive Summary
 
-##It's based on the data from Tumor Portal downloaded on July 18, 2016.
+## Introduction
 
+We aimed to compare the number of mutations found in ARID1A tumor suppressor gene across different tumor types included in The Cancer Genome Atlas.
+
+## Methods
+
+We downloaded the mutation data from Tumor Portal website (http://www.tumorportal.org/view?geneSymbol=ARID1A) on July 18, 2016.
+Downloaded data are in .maf file which we converted into .csv file to make the input suitable for R.
+
+We used dplyr to summarize the number of ARID1A mutations per tumor type.
+We used package pplot2 to plot the summarized number of mutations per tumor type.
+
+## Results
+
+We observed that the highest number of ARID1A mutations were present in endometrial carcinoma (UCEC).
 
 ```{r}
-library(Package3)
 library(ggplot2)
 library(dplyr)
-pplot(ARID1A)
+library(Package3)
+pplot(ARIDA1)
 ```
+
+## Conclusions
+
+Frequncy of ARID1A mutations differ between tumor types.
 
